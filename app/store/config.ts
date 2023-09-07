@@ -5,7 +5,7 @@ import { getClientConfig } from "../config/client";
 import { DEFAULT_INPUT_TEMPLATE, DEFAULT_MODELS, StoreKey } from "../constant";
 
 export type ModelType = (typeof DEFAULT_MODELS)[number]["name"];
-
+ 
 export enum SubmitKey {
   Enter = "Enter",
   CtrlEnter = "Ctrl + Enter",
@@ -15,22 +15,26 @@ export enum SubmitKey {
 }
 
 export enum Theme {
+  Auto = "auto",
   Light = "light",
   Dark = "dark",
   Hubspot = "hubspot",
-  Auto = "auto",
+  Amour = "amour",
+  Authentic = "authentic",
+  Tiktok = "tiktok",
 }
+//const logo = require("../icons/se4.svg") as string;
 
 export const DEFAULT_CONFIG = {
   submitKey: SubmitKey.CtrlEnter as SubmitKey,
-  avatar: "1f603",
+  avatar: "../icons/se5.svg",//1f603
   fontSize: 14,
-  theme: Theme.Hubspot as Theme,
+  theme: Theme.Auto as Theme,
   tightBorder: !!getClientConfig()?.isApp,
   sendPreviewBubble: true,
   enableAutoGenerateTitle: true,
   sidebarWidth: 300,
-
+ 
   disablePromptHint: false,
 
   dontShowMaskSplashScreen: false, // dont show splash screen when create chat
