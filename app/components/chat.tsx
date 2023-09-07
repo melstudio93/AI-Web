@@ -25,12 +25,12 @@ import SettingsIcon from "../icons/chat-settings.svg";
 import DeleteIcon from "../icons/clear.svg";
 import PinIcon from "../icons/pin.svg";
 import EditIcon1 from "../icons/rename.svg";
-import EditIcon from "../icons/se5.svg";
+import EditIcon from "../icons/se4.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
 import EnablePluginIcon from "../icons/plugin_enable.svg";
 import DisablePluginIcon from "../icons/plugin_disable.svg";
-
+ 
 import LightIcon from "../icons/light.svg";
 import DarkIcon from "../icons/dark.svg";
 import AutoIcon from "../icons/auto.svg";
@@ -426,11 +426,11 @@ function switchUsePlugins() {
     session.mask.usePlugins = !session.mask.usePlugins;
   });
 }
-
+ 
   // switch themes
   const theme = config.theme;
   function nextTheme() {
-    const themes = [Theme.Auto, Theme.Light, Theme.Dark,Theme.Hubspot];
+    const themes = [Theme.Auto, Theme.Light, Theme.Dark,Theme.Hubspot,Theme.Amour,Theme.Authentic,Theme.Tiktok];
     const themeIndex = themes.indexOf(theme);
     const nextIndex = (themeIndex + 1) % themes.length;
     const nextTheme = themes[nextIndex];
@@ -490,9 +490,14 @@ function switchUsePlugins() {
             ) : theme === Theme.Dark ? (
               <DarkIcon />
             ): theme === Theme.Hubspot ? (
-              <DarkIcon />
-            )
-            : null}
+              <LightIcon />
+            ): theme === Theme.Amour ? (
+              <LightIcon />
+            ): theme === Theme.Authentic ? (
+              <LightIcon />
+            ): theme === Theme.Tiktok ? (
+              <LightIcon />
+            ): null}
           </>
         }
       />
