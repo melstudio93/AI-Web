@@ -7,7 +7,7 @@ import React, {
   useCallback,
   Fragment,
 } from "react";
-
+const logo = require("../icons/se4.svg") as string;
 import SendWhiteIcon from "../icons/send-white.svg";
 import BrainIcon from "../icons/brain.svg";
 import RenameIcon from "../icons/rename.svg";
@@ -24,7 +24,8 @@ import BreakIcon from "../icons/break.svg";
 import SettingsIcon from "../icons/chat-settings.svg";
 import DeleteIcon from "../icons/clear.svg";
 import PinIcon from "../icons/pin.svg";
-import EditIcon from "../icons/rename.svg";
+import EditIcon1 from "../icons/rename.svg";
+import EditIcon from "../icons/se5.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
 import EnablePluginIcon from "../icons/plugin_enable.svg";
@@ -50,7 +51,7 @@ import {
   DEFAULT_TOPIC,
   ModelType,
 } from "../store";
-
+ 
 import {
   copyToClipboard,
   selectOrCopy,
@@ -85,6 +86,8 @@ import {
   REQUEST_TIMEOUT_MS,
 } from "../constant";
 import { Avatar } from "./emoji";
+//import { Avatar } from 'react-native-elements';
+import MkIcon from "../icons/se4.svg";
 import { ContextPrompts, MaskAvatar, MaskConfig } from "./mask";
 import { useMaskStore } from "../store/mask";
 import { ChatCommandPrefix, useChatCommand, useCommand } from "../command";
@@ -1142,32 +1145,57 @@ function _Chat() {
                 className={
                   isUser ? styles["chat-message-user"] : styles["chat-message"]
                 }
-              >
+              > 
                 <div className={styles["chat-message-container"]}>
                   <div className={styles["chat-message-header"]}>
-                    <div className={styles["chat-message-avatar"]}>
-                      <div className={styles["chat-message-edit"]}>
+                    <div className={isUser ? styles["chat-message-avatar"]:styles["chat-message-avatar1"]}>
+                      <div className={isUser ? styles["chat-message-edit"]:styles["chat-message-edit1"]}>
+                      {isUser ? (
+                        <EditIcon
+                        //icon={<EditIcon />}
+                        onClick={async () => {
+                          const newMessage = await showPrompt(
+                            Locale.Chat.Actions.Edit,
+                            message.content,
+                            10,
+                          );
+                          chatStore.updateCurrentSession((session) => {
+                            const m = session.mask.context
+                              .concat(session.messages)
+                              .find((m) => m.id === message.id);
+                            if (m) {
+                              m.content = newMessage;
+                            }
+                          });
+                        }}
+                      ></EditIcon>
+                      //IconButton
+                      ) : (
+                        
                         <IconButton
-                          icon={<EditIcon />}
-                          onClick={async () => {
-                            const newMessage = await showPrompt(
-                              Locale.Chat.Actions.Edit,
-                              message.content,
-                              10,
-                            );
-                            chatStore.updateCurrentSession((session) => {
-                              const m = session.mask.context
-                                .concat(session.messages)
-                                .find((m) => m.id === message.id);
-                              if (m) {
-                                m.content = newMessage;
-                              }
-                            });
-                          }}
-                        ></IconButton>
+                        icon={<EditIcon1 />}
+                        onClick={async () => {
+                          const newMessage = await showPrompt(
+                            Locale.Chat.Actions.Edit,
+                            message.content,
+                            10,
+                          );
+                          chatStore.updateCurrentSession((session) => {
+                            const m = session.mask.context
+                              .concat(session.messages)
+                              .find((m) => m.id === message.id);
+                            if (m) {
+                              m.content = newMessage;
+                            }
+                          });
+                        }}
+                      ></IconButton>
+                      )}
                       </div>
                       {isUser ? (
-                        <Avatar avatar={config.avatar} />
+                        
+                        <Avatar avatar={config.avatar}/>
+                     //logo<Avatar avatar={config.avatar} /><Avatar avatar="gpt-5" />
                       ) : (
                         <MaskAvatar mask={session.mask} />
                       )}
