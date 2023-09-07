@@ -1,7 +1,7 @@
 "use client";
 
 require("../polyfill");
-
+ 
 import { useState, useEffect } from "react";
 
 import styles from "./home.module.scss";
@@ -66,6 +66,14 @@ export function useSwitchTheme() {
       document.body.classList.add("dark");
     } else if (config.theme === "light") {
       document.body.classList.add("light");
+    } else if (config.theme === "amour") {
+      document.body.classList.add("amour");
+    } else if (config.theme === "hubspot") {
+      document.body.classList.add("hubspot");
+    } else if (config.theme === "authentic") {
+      document.body.classList.add("authentic");
+    } else if (config.theme === "tiktok") {
+      document.body.classList.add("tiktok");
     }
 
     const metaDescriptionDark = document.querySelector(
@@ -74,14 +82,34 @@ export function useSwitchTheme() {
     const metaDescriptionLight = document.querySelector(
       'meta[name="theme-color"][media*="light"]',
     );
-
+    const metaDescriptionAmour = document.querySelector(
+      'meta[name="theme-color"][media*="amour"]',
+    );
+    const metaDescriptionHubspot = document.querySelector(
+      'meta[name="theme-color"][media*="hubspot"]',
+    );
+    const metaDescriptionAuthentic = document.querySelector(
+      'meta[name="theme-color"][media*="authentic"]',
+    );
+    const metaDescriptionTiktok = document.querySelector(
+      'meta[name="theme-color"][media*="tiktok"]',
+    );
+    
     if (config.theme === "auto") {
       metaDescriptionDark?.setAttribute("content", "#151515");
       metaDescriptionLight?.setAttribute("content", "#fafafa");
+      metaDescriptionAmour?.setAttribute("content", "#DE5935");
+      metaDescriptionHubspot?.setAttribute("content", "#fa8888");
+      metaDescriptionAuthentic?.setAttribute("content", "#5EBEC4");
+      metaDescriptionTiktok?.setAttribute("content", "#5EBEC4");
     } else {
       const themeColor = getCSSVar("--theme-color");
       metaDescriptionDark?.setAttribute("content", themeColor);
       metaDescriptionLight?.setAttribute("content", themeColor);
+      metaDescriptionAmour?.setAttribute("content", themeColor);
+      metaDescriptionHubspot?.setAttribute("content", themeColor);
+      metaDescriptionAuthentic?.setAttribute("content", themeColor);
+      metaDescriptionTiktok?.setAttribute("content", themeColor);
     }
   }, [config.theme]);
 }
