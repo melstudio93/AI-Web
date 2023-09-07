@@ -3,7 +3,7 @@ import { SubmitKey } from "../store/config";
 import { LocaleType } from "./index";
 
 // if you are adding a new translation, please use PartialLocaleType instead of LocaleType
-
+ 
 const isApp = !!getClientConfig()?.isApp;
 const en: LocaleType = {
   WIP: "Coming Soon...",
@@ -60,6 +60,9 @@ const en: LocaleType = {
         light: "Light Theme",
         dark: "Dark Theme",
         hubspot: "Hubspot Theme",
+        amour: "Amour Theme",
+        authentic: "Authentic Theme",
+        tiktok: "Tiktok Theme",
       },
       Prompt: "Prompts",
       Masks: "Masks",
@@ -94,7 +97,7 @@ const en: LocaleType = {
     Format: {
       Title: "Export Format",
       SubTitle: "Markdown or PNG Image",
-    },
+    }, 
     IncludeContext: {
       Title: "Including Context",
       SubTitle: "Export context prompts in mask or not",
