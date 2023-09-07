@@ -25,7 +25,7 @@ import SettingsIcon from "../icons/chat-settings.svg";
 import DeleteIcon from "../icons/clear.svg";
 import PinIcon from "../icons/pin.svg";
 import EditIcon1 from "../icons/rename.svg";
-import EditIcon from "../icons/se5.svg";
+import EditIcon from "../icons/se5.svg";//
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
 import EnablePluginIcon from "../icons/plugin_enable.svg";
@@ -1153,8 +1153,8 @@ function _Chat() {
               > 
                 <div className={styles["chat-message-container"]}>
                   <div className={styles["chat-message-header"]}>
-                    <div className={isUser ? styles["chat-message-avatar"]:styles["chat-message-avatar1"]}>
-                      <div className={isUser ? styles["chat-message-edit"]:styles["chat-message-edit1"]}>
+                    <div className={isUser ? styles["chat-message-avatar"]+ " no-dark":styles["chat-message-avatar1"]+ " no-dark"}>
+                      <div className={isUser ? styles["chat-message-edit"]+ " no-dark":styles["chat-message-edit1"]+ " no-dark"}>
                       {isUser ? (
                         <EditIcon
                         //icon={<EditIcon />}
