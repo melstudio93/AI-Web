@@ -343,7 +343,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    opacity: 1;
     transition: all ease 0.3s;
 
     button {
@@ -358,6 +358,36 @@
       }
     }
   }
+
+}
+
+.chat-message-avatar1 {
+  position: relative;
+
+  .chat-message-edit1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all ease 0.3s;
+
+    button {
+      padding: 7px;
+    }
+  }
+  /* Specific styles for iOS devices */
+  @media screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
+    @supports (-webkit-touch-callout: none) {
+      .chat-message-edit1 {
+        top: -8%;
+      }
+    }
+  }
+
 }
 //change the chat show
 .chat-message-checkmark {
