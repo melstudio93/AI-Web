@@ -3,7 +3,7 @@
 
 @mixin light {
   --theme: light;
-
+ 
   /* color */
   --white: white;
   --black: rgb(48, 48, 48);
@@ -22,17 +22,19 @@
   --border-in-light: 1px solid rgb(222, 222, 222);
 }
 
-@mixin hubspot {
-  --theme: hubspot;
+//Authentic
+
+@mixin authentic {
+  --theme: authentic;
 
   /* color */
   --white: white;
-  --black: rgb(48, 48, 48);
-  --gray: rgb(227, 160, 160);
-  --primary: rgb(229, 210, 38);
-  --second: rgb(207, 157, 38); //sidebar 
-  --hover-color: #f3f3f3;
-  --bar-color: rgba(0, 0, 0, 0.1);
+  --black: rgb(0, 0, 0);
+  --gray: #FDF5DF;
+  --primary: #5EBEC4;
+  --second: #F92C85; //sidebar 
+  --hover-color: #fa8888;
+  --bar-color: rgba(107, 240, 193, 0.1);
   --theme-color: var(--gray);
 
   /* shadow */
@@ -42,6 +44,54 @@
   /* stroke */
   --border-in-light: 1px solid rgb(222, 222, 222);
 }
+
+
+//Amour
+
+@mixin amour {
+  --theme: amour;
+
+  /* color */
+  --white: white;
+  --black: rgb(0, 0, 0);
+  --gray: #F7CD46;
+  --primary: #DE5935;
+  --second: #5AC3B0; //sidebar 
+  --hover-color: #fa8888;
+  --bar-color: rgba(107, 240, 193, 0.1);
+  --theme-color: var(--gray);
+
+  /* shadow */
+  --shadow: 50px 50px 100px 10px rgb(0, 0, 0, 0.1);
+  --card-shadow: 0px 2px 4px 0px rgb(0, 0, 0, 0.05);
+
+  /* stroke */
+  --border-in-light: 1px solid rgb(222, 222, 222);
+  
+}
+
+@mixin hubspot {
+  --theme: hubspot;
+
+  /* color */
+  --white: white;
+  --black: rgb(0, 0, 0);
+  --gray: rgb(242, 193, 193);
+  --primary: rgb(244, 26, 236);
+  --second: rgb(244, 227, 188); //sidebar 
+  --hover-color: #fa8888;
+  --bar-color: rgba(107, 240, 193, 0.1);
+  --theme-color: var(--gray);
+
+  /* shadow */
+  --shadow: 50px 50px 100px 10px rgb(0, 0, 0, 0.1);
+  --card-shadow: 0px 2px 4px 0px rgb(0, 0, 0, 0.05);
+
+  /* stroke */
+  --border-in-light: 1px solid rgb(222, 222, 222);
+}
+
+
 
 @mixin dark {
   --theme: dark;
@@ -59,23 +109,33 @@
   --border-in-light: 1px solid rgba(255, 255, 255, 0.192);
 
   --theme-color: var(--gray);
-
-  div:not(.no-dark) > svg {
+    div:not(.no-dark) > svg {
     filter: invert(0.5);
   }
 }
 
+
 .light {
   @include light;
+}
+
+
+.authentic {
+  @include authentic;
+}
+
+.amour {
+  @include amour;
+}
+
+.hubspot {
+  @include hubspot;
 }
 
 .dark {
   @include dark;
 }
 
-.hubspot {
-  @include hubspot;
-}
 
 .mask {
   filter: invert(0.8);
@@ -92,7 +152,6 @@
   --full-height: 100%;
 }
 
-
 :root {
   @include hubspot;
 
@@ -104,24 +163,98 @@
   --full-height: 100%;
 }
 
+:root {
+  @include authentic;
 
-@media only screen and (max-width: 600px) {
+  --window-width: 90vw;
+  --window-height: 90vh;
+  --sidebar-width: 300px;
+  --window-content-width: calc(100% - var(--sidebar-width));
+  --message-max-width: 80%;
+  --full-height: 100%;
+}
+
+:root {
+  @include amour;
+
+  --window-width: 90vw;
+  --window-height: 90vh;
+  --sidebar-width: 300px;
+  --window-content-width: calc(100% - var(--sidebar-width));
+  --message-max-width: 80%;
+  --full-height: 100%;
+}
+@media (prefers-color-scheme: hubspot) {
   :root {
-    --window-width: 100vw;
-    --window-height: var(--full-height);
-    --sidebar-width: 100vw;
-    --window-content-width: var(--window-width);
-    --message-max-width: 100%;
+    @include hubspot;
   }
-
-  .no-mobile {
-    display: none;
+}
+@media (prefers-color-scheme: authentic) {
+  :root {
+    @include authentic;
+  }
+}
+@media (prefers-color-scheme: amour) {
+  :root {
+    @include amour;
   }
 }
 
+//@media (prefers-color-scheme: light) {
+//  :root {
+//    @include light;
+//  }
+//}
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
-    @include hubspot;
+    @include dark;
+  }
+}
+
+//TikTok
+
+@mixin tiktok {
+  --theme: tiktok;
+
+  /* color */
+  --white: white;
+  --black: rgb(0, 0, 0);
+  --gray: #EA445A;
+  --primary: #000000;
+  --second: #74F0ED; //sidebar 
+  --hover-color: #fa8888;
+  --bar-color: rgba(107, 240, 193, 0.1);
+  --theme-color: var(--gray);
+
+  /* shadow */
+  --shadow: 50px 50px 100px 10px rgb(0, 0, 0, 0.1);
+  --card-shadow: 0px 2px 4px 0px rgb(0, 0, 0, 0.05);
+
+  /* stroke */
+  --border-in-light: 1px solid rgb(222, 222, 222);
+}
+
+.tiktok {
+  @include tiktok;
+}
+
+:root {
+  @include tiktok;
+
+  --window-width: 90vw;
+  --window-height: 90vh;
+  --sidebar-width: 300px;
+  --window-content-width: calc(100% - var(--sidebar-width));
+  --message-max-width: 80%;
+  --full-height: 100%;
+}
+
+@media (prefers-color-scheme: tiktok) {
+  :root {
+    @include tiktok;
   }
 }
 
