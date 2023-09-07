@@ -3,7 +3,7 @@ import EmojiPicker, {
   EmojiStyle,
   Theme as EmojiTheme,
 } from "emoji-picker-react";
-
+ 
 import { ModelType } from "../store";
 
 import BotIcon from "../icons/bot.svg";
