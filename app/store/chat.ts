@@ -2,15 +2,15 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 import { trimTopic } from "../utils";
-
+ 
 import Locale, { getLang } from "../locales";
 import { showToast } from "../components/ui-lib";
 import { ModelConfig, ModelType, useAppConfig } from "./config";
 import { createEmptyMask, Mask } from "./mask";
-import {
+import { 
   DEFAULT_INPUT_TEMPLATE,
   DEFAULT_SYSTEM_TEMPLATE,
-  StoreKey,
+  StoreKey, 
   SUMMARIZE_MODEL,
 } from "../constant";
 import { api, RequestMessage } from "../client/api";
@@ -18,7 +18,7 @@ import { ChatControllerPool } from "../client/controller";
 import { prettyObject } from "../utils/format";
 import { estimateTokenLength } from "../utils/token";
 import { nanoid } from "nanoid";
-
+ 
 export interface ChatToolMessage {
   toolName: string;
   toolInput?: string;
