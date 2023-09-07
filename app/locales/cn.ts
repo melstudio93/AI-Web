@@ -2,7 +2,7 @@ import { getClientConfig } from "../config/client";
 import { SubmitKey } from "../store/config";
 
 const isApp = !!getClientConfig()?.isApp;
-
+ 
 const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
@@ -58,6 +58,9 @@ const cn = {
         light: "亮色模式",
         dark: "深色模式",
         hubspot:"宿点模式",
+        amour: "热恋模式",
+        authentic:"想法模式",
+        tiktok:"抖音主题",
       },
       Prompt: "快捷指令",
       Masks: "所有面具",
