@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 import styles from "./home.module.scss";
-
+ 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
 import GithubIcon from "../icons/github.svg";
@@ -16,7 +16,7 @@ import MaskIcon from "../icons/se4.svg";
 import PluginIcon from "../icons/mc.svg";//mc.svg
 import DragIcon from "../icons/drag.svg";
 import DiliIcon from "../icons/Bilibili.svg";
-import MJIcon from "../icons/MBIL.svg";
+import MJIcon from "../icons/logo.svg";//MBIL.svg
 import Locale from "../locales";
 
 
@@ -121,24 +121,44 @@ export function SideBar(props: { className?: string }) {
   useHotKey();
 //MAJOR Computational Biology Research Lab
   return (
+    
     <div
       className={`${styles.sidebar} ${props.className} ${
         shouldNarrow && styles["narrow-sidebar"]
       }`}
     >
+    
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
-        <div className={styles["sidebar-title"]+ " no-dark"} data-tauri-drag-region>
-        
+      <div className={styles["sidebar-title"]} data-tauri-drag-region>
+      <a style={{ color: '#00bfff' }}>MAJOR </a>
+      <a style={{ color: '#8b0000' }}>Computational Biology </a> 
+      <a style={{ color: '#6b8e23' }}>Research Lab</a>
+        </div>
+        <hr
+          style={{
+          background: '#000000',
+          color: '#000000',
+          borderColor: '#000000',
+          height: '3.5px',
+          }}
+        />
+        <div className={styles["sidebar-sub-title"]}>
+        <a style={{ color: '#ffa07a' }}>MCBRL </a>
+        <a style={{ color: '#87ceeb' }}>AI Assistant</a>
+          </div>
+        <hr
+          style={{
+          background: '#000000',
+          color: '#000000',
+          borderColor: '#000000',
+          height: '3.5px',
+          }}
+        />
+        < div className={styles["sidebar-logo"] + " no-dark"}>
         <MJIcon />
         </div>
-        <div className={styles["sidebar-sub-title"]+ " no-dark"}>
-        MajorBio AI assistant
-        </div>
-        < div className={styles["sidebar-logo"] + " no-dark"}>
-          <MJIcon />
-        </div>
       </div>
-
+      
       <div className={styles["sidebar-header-bar"]+ " no-dark"}>
       
         <MaskIcon
@@ -149,8 +169,6 @@ export function SideBar(props: { className?: string }) {
           onClick={() => navigate(Path.NewChat, { state: { fromHome: true } })}
           //shadow
         />
-
-        
         <PluginIcon
           //icon={<PluginIcon />}
           //text={shouldNarrow ? undefined : Locale.Plugin.Name}
@@ -161,8 +179,6 @@ export function SideBar(props: { className?: string }) {
           //onClick={() => navigate(Path.NewChat,{})}
           //shadow
         /> 
-        
-      
       </div>
 
       <div
