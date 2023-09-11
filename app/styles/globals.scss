@@ -258,6 +258,21 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  :root {
+    --window-width: 100vw;
+    --window-height: var(--full-height);
+    --sidebar-width: 100vw;
+    --window-content-width: var(--window-width);
+    --message-max-width: 100%;
+  }
+
+  .no-mobile {
+    display: none;
+  }
+}
+
+
 html {
   height: var(--full-height);
 
