@@ -14,7 +14,7 @@ export const EN_MASKS: BuiltinMask[] = [
       },
     ],
     modelConfig: {
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       temperature: 0.3,
       max_tokens: 2000,
       presence_penalty: 0,
@@ -60,7 +60,7 @@ export const EN_MASKS: BuiltinMask[] = [
       },
     ],
     modelConfig: {
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       temperature: 0.5,
       max_tokens: 2000,
       presence_penalty: 0,
@@ -118,7 +118,40 @@ export const EN_MASKS: BuiltinMask[] = [
       },
     ],
     modelConfig: {
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
+      temperature: 0.5,
+      max_tokens: 2000,
+      presence_penalty: 0,
+      frequency_penalty: 0,
+      sendMemory: true,
+      historyMessageCount: 4,
+      compressMessageLengthThreshold: 2000,
+    },
+    lang: "en",
+    builtin: true,
+    createdAt: 1688899480413,
+  },
+  {
+    avatar: "1f9d1",
+    name: "Doctor",
+    context: [
+      {
+        id: "doctor-0",
+        role: "user",
+        content:
+            
+        'I want you to act as a doctor and come up with creative treatments for illnesses or diseases. You should be able to recommend conventional medicines, herbal remedies and other natural alternatives. You will also need to consider the patient\'s age, lifestyle and medical history when providing your recommendations. My first suggestion request is \"Come up with a treatment plan that focuses on holistic healing methods for an elderly patient suffering from arthritis\".',
+          date: "",
+      },
+      {
+        id: "doctor-1",
+        role: "assistant",
+        content: "How may I help you today, User?",
+        date: "",
+      },
+    ],
+    modelConfig: {
+      model: "gpt-3.5-turbo",
       temperature: 0.5,
       max_tokens: 2000,
       presence_penalty: 0,
