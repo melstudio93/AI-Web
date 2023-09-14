@@ -6,7 +6,7 @@ import { getClientConfig } from "./config/client";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MajorBio AI Assistant",
+  title: "MCBRL AI Assistant",
   description: "Your personal ChatGPT AI Assistant.",
   viewport: {
     width: "device-width",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: tiktok)", color: "#151515" },
   ],
   appleWebApp: {
-    title: "MajorBio AI Assistant",
+    title: "MCBRL AI Assistant",
     statusBarStyle: "default",
   },
 };
