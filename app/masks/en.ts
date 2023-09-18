@@ -126,7 +126,7 @@ export const EN_MASKS: BuiltinMask[] = [
   },
   {
     avatar: "1f43c",
-    name: "Data Scientist,",
+    name: "Data Scientist",
     context: [
       {
         id: "Data-0",
@@ -157,7 +157,7 @@ export const EN_MASKS: BuiltinMask[] = [
     createdAt: 1688899480413,
   },
   {
-    avatar: "1f43c",
+    avatar: "1f989",
     name: "Statistical Geneticist",
     context: [
       {
@@ -221,7 +221,7 @@ export const EN_MASKS: BuiltinMask[] = [
     createdAt: 1688899480413,
   },
   {
-    avatar: "1f5a5",
+    avatar: "1f435",
     name: "Computer Scientist",
     context: [
       {
@@ -349,7 +349,7 @@ export const EN_MASKS: BuiltinMask[] = [
     createdAt: 1688899480413,
   },
   {
-    avatar: "1f9a9",
+    avatar: "1f411",
     name: "Biologist",
     context: [
       {
